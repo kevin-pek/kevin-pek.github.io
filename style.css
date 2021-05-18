@@ -1,0 +1,35 @@
+body {
+	background-color: #222;
+	color: white;
+	margin: 0;
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+}
+
+#navbar {
+	display: flex;
+	flex-direction: horizontal;
+}
+
+#name {
+	padding: 25px;
+	margin: auto;
+}
+
+#navigation-section {
+	margin:auto;
+	display: flex;
+	flex-direction: horizontal;
+}
+
+.navigation-button {
+	margin: 25px;
+}
+
+.page {
+	border: none;
+}
