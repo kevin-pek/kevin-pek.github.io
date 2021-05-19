@@ -5,7 +5,9 @@
 <!--
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="jquery.fracs-1.0.2.js"></script>
 		<link rel="stylesheet" href='style.css' />
 		<link rel="stylesheet" href='landing.css' />
 		<link rel="stylesheet" href='about.css' />
@@ -14,12 +16,12 @@
 		<header>
 			<!-- TOP NAVBAR -->
 			<div id="navbar">
-				<div id="name">Kevin Pek</div>
+				<div id="name" class='navigation-button' data-pageId='1'>Kevin Pek</div>
 				<!-- BUTTON TO TOGGLE DROPDOWN -->
 				<div id="navigation-section">
-				  <div class='navigation-button' data-pageId='1'>About</div>
-				  <div class='navigation-button' data-pageId='2'>Experience</div>
-				  <div class='navigation-button' data-pageId='3'>Contact</div>
+				  <div class='navigation-button' data-pageId='2'>About</div>
+				  <div class='navigation-button' data-pageId='3'>Experience</div>
+				  <div class='navigation-button' data-pageId='4'>Contact</div>
 				</div>
 			</div>
 		</header>
@@ -27,17 +29,30 @@
 		<main>
 			<!-- EACH DIV CONTAINS A DIFFERENT PAGE CONTENT -->
 			<!-- CLICK ON NAVBAR div WILL BRING USER TO SPECIFIC PAGE -->
-			<div id="landing-page" class="page">
+			<div id="page1" class="page">
 				<!--<div id="white-filler"></div>-->
 				<div class="page-content">
 					<div id="title-text">
 						<h1>Kevin Pek</h1>
 						<p>Scroll down for more..</p>
+						<button class='navigation-button' data-pageId='2'></button>
 					</div>
 				</div>
-				<div class="landing-bg"></div>
+				<div class="bg-content">
+					<div id="bg-box"></div>
+				</div>
 			</div>
-			<div id="about-page" class="page"></div>
+			<div id="page2" class="page">
+				<div class="content-block">
+					<h1>About Me</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="content-block">
+					<h1>About Me</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+			<div id="site-bg"></div>
 		</main>
 	</body>
 </html>

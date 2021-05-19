@@ -2,6 +2,7 @@ body {
 	background-color: #222;
 	color: white;
 	margin: 0;
+	font-size: 18px;
 }
 
 header {
@@ -16,7 +17,6 @@ header {
 }
 
 #name {
-	padding: 25px;
 	margin: auto;
 }
 
@@ -27,9 +27,47 @@ header {
 }
 
 .navigation-button {
-	margin: 25px;
+	margin: 2.5em;
 }
 
 .page {
-	border: none;
+	border: none !important;
+	width: 100%;
+	height: 100vh;
+}
+
+.content-block {
+	margin: 2em;
+	text-align: justify;
+	z-index: 3;
+}
+
+/* for keeping things visible/invisible when animations completed */
+.active {
+	opacity: 1;
+}
+.inactive {
+	opacity: 0;
+}
+
+/* fade animations mainly for content block class */
+.fadeaway {
+	-webkit-animation: fade 0.5s linear;
+	animation: fade 0.5s linear;
+}
+.fadein {
+	-webkit-animation: fade 0.5s linear;
+	animation: fade 0.5s linear;
+	animation-direction: reverse;
+}
+
+@keyframes fade {
+  0% {
+  	opacity: 100%;
+  	transform: translate(0, 0);
+  }
+  100% {
+  	opacity: 0%;
+  	transform: translate(0, 20px);
+  }
 }

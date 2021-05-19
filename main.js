@@ -1,24 +1,47 @@
-//selectedPage will determine which div in the website to load
-window.addEventListener('scroll', () => {
-  document.body.style.setProperty('--scroll',window.pageYOffset / (document.getElementById("landing-page").offsetHeight - window.innerHeight));
-}, false);
-/*
-let selectedPage = 1;
+//selectedPage indicates which pageId is being loaded atm
+let selectedPage = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
-	let button = document.querySelector('.navigation-button');
-	button.addEventListener('click', navigateTo(button));
+	document.querySelectorAll('.navigation-button', function (button) {
+    button.addEventListener('click', NavigateTo(button.dataset.pageId));
+  });
+  NavigateTo(1);
+  //document.addEventListener('scroll', FadeCheck());
 })
 
-function navigateTo(button) {
-	document.querySelectorAll('.page').forEach(function (page) {
-		if (page.id != button.dataset.pageId) {
-			page.style.display = 'none';
-		} else {
-			selectedPage = page;
-		}
-	});
+function NavigateTo(pageId) {
+	let page = document.querySelector("#page"+pageId);
+  //console.log(page.offsetTop);
+  window.scrollTo({
+    top: page.offsetTop,
+    behavior: 'smooth'
+  });
 }
+
+// callback function for fracs plugin
+function callback (fracs, prev_fracs) {
+  //console.log(this);
+  if (fracs.visible > 0.5 && this.style.opacity == 0){
+    $(this).addClass("fadein");
+    this.addEventListener('animationend', () => {
+      $(this).removeClass("fadein");
+      this.style.opacity = 1;
+    });
+  }
+  else if (fracs.visible < 0.5 && this.style.opacity == 1) {
+    $(this).addClass("fadeaway");
+    this.addEventListener('animationend', () => {
+      $(this).removeClass("fadeaway");
+      this.style.opacity = 0;
+    });
+  }
+};
+
+// checks how much of each queried div is visible
+$(window).scroll(function () {
+  $(".content-block").fracs(callback);
+  //console.log(fracs);
+});
 
 // parallax scrolling plugin
 (function($){
@@ -43,7 +66,7 @@ function navigateTo(button) {
       });
     });
   };
-});*/
+});
 
 // call the plugin
 // $('.section').parallax({ 'coeff':-0.65 });
