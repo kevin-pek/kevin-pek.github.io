@@ -1,7 +1,10 @@
-//selectedPage indicates which pageId is being loaded atm
-let selectedPage = 0;
-
 document.addEventListener('DOMContentLoaded', function() {
+  let landingPage = document.getElementById("page1");
+  $("#page1").addClass("fadein");
+  landingPage.addEventListener('animationend', () => {
+    $("#page1").removeClass("fadein");
+    landingPage.style.opacity = 1;
+  });
 	document.querySelectorAll('.navigation-button', function (button) {
     button.addEventListener('click', NavigateTo(button.dataset.pageId));
   });
@@ -40,11 +43,15 @@ function callback (fracs, prev_fracs) {
 // checks how much of each queried div is visible
 $(window).scroll(function () {
   $(".content-block").fracs(callback);
+  $('.page-content').fracs(callback);
   //console.log(fracs);
 });
 
+function setTranslate(xPos, yPos, el) {
+  el.style.transform = "translate3d(" + xPos + ", " + yPos + "px, 0)";
+}
+/*
 // parallax scrolling plugin
-(function($){
   $.fn.parallax = function(options){
     var $$ = $(this);
     offset = $$.offset();
@@ -65,9 +72,8 @@ $(window).scroll(function () {
         }
       });
     });
-  };
-});
-
+  }
+*/
 // call the plugin
-// $('.section').parallax({ 'coeff':-0.65 });
+// $('.bg-content').parallax({ 'coeff':-0.65 });
 // $('.section .inner').parallax({ 'coeff':1.15 });

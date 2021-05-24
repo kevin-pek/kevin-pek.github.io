@@ -1,13 +1,14 @@
 #page1 {
-  height: 120vh;
- text-align: center;
+  height: 150vh;
+  text-align: center;
+  opacity: 0;
 }
 
 .page-content {
   top:40%;
   left: 30%;
   width: 40%;
-  position: fixed;
+  position: sticky;
   z-index: 3;
 }
 
@@ -19,7 +20,7 @@
 
 #title-text h1 {
   font-size: 60px;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 #title-text p {
@@ -29,26 +30,32 @@
 }
 
 #bg-box {
-  z-index: 0;
-  position: absolute;
-  top: 15%;
+  z-index: -1;
+  position: fixed;
+  top: 25%;
   left: 30%;
   min-width: 21em;
   padding-bottom: 30em;
-
-  background-image: url('media/gradient.png');
   background-size: auto 100%;
+}
+
+#landing-bg {
+	background-image: url('media/landing.png');
+  background-position: center;
   filter: blur(1px);
   -webkit-filter: blur(1px);
-  animation: loadpage 1s linear;
+  animation: scrollfade 0.5s linear;
   animation-play-state: paused;
 }
 
-.bg-content {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
-
-@keyframes loadpage {
+@keyframes scrollfade {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
