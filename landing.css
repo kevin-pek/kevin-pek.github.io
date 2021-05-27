@@ -1,14 +1,16 @@
 #page1 {
   height: 150vh;
   text-align: center;
-  opacity: 0;
+  /*animation: scrollfade 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);*/
 }
 
 .page-content {
-  top:40%;
+  top:45%;
   left: 30%;
   width: 40%;
-  position: sticky;
+  position: fixed;
   z-index: 3;
 }
 
@@ -44,8 +46,6 @@
   background-position: center;
   filter: blur(1px);
   -webkit-filter: blur(1px);
-  animation: scrollfade 0.5s linear;
-  animation-play-state: paused;
 }
 
 @keyframes scrollfade {

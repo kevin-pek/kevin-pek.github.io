@@ -1,14 +1,21 @@
+let selectedPage = 1;
+
 document.addEventListener('DOMContentLoaded', function() {
+  /*window.addEventListener('scroll', () => {
+    document.body.style.setProperty('--scroll',window.pageYOffset / (document.querySelector("#page1").offsetHeight - window.innerHeight));
+  }, false);*/
+  /*
   let landingPage = document.getElementById("page1");
   $("#page1").addClass("fadein");
   landingPage.addEventListener('animationend', () => {
     $("#page1").removeClass("fadein");
     landingPage.style.opacity = 1;
-  });
+  });*/
+
 	document.querySelectorAll('.navigation-button', function (button) {
     button.addEventListener('click', NavigateTo(button.dataset.pageId));
   });
-  NavigateTo(1);
+  NavigateTo(selectedPage);
   //document.addEventListener('scroll', FadeCheck());
 })
 
@@ -21,29 +28,47 @@ function NavigateTo(pageId) {
   });
 }
 
+function changeActivePage(pageId) {
+  let prevPage = document.querySelector("#page"+selectedPage);
+  $("#page"+selectedPage).addClass("fadeout");
+  prevPage.addEventListener('animationend', () => {
+    $("#page"+selectedPage).removeClass("fadeout");
+    prevPage.style.opacity = 0;
+    //console.log(selectedPage);
+  });
+
+  selectedPage = pageId;
+
+  $("#page"+pageId).addClass("fadein");
+  let newPage = document.querySelector("#page"+pageId);
+  newPage.addEventListener('animationend', () => {
+    $("#page"+pageId).removeClass("fadein");
+    newPage.style.opacity = 1;
+    //console.log(newPage);
+  });
+}
+
 // callback function for fracs plugin
 function callback (fracs, prev_fracs) {
   //console.log(this);
-  if (fracs.visible > 0.5 && this.style.opacity == 0){
-    $(this).addClass("fadein");
-    this.addEventListener('animationend', () => {
-      $(this).removeClass("fadein");
-      this.style.opacity = 1;
-    });
-  }
+  if (fracs.visible > 0.5 && this.style.opacity == 0) {
+    changeActivePage($(this).prop('id').slice(-1));
+  }/*
   else if (fracs.visible < 0.5 && this.style.opacity == 1) {
-    $(this).addClass("fadeaway");
+    $(this).addClass("fadeout");
     this.addEventListener('animationend', () => {
-      $(this).removeClass("fadeaway");
+      $(this).removeClass("fadeout");
       this.style.opacity = 0;
     });
-  }
-};
+  }*/
+}
 
 // checks how much of each queried div is visible
 $(window).scroll(function () {
-  $(".content-block").fracs(callback);
-  $('.page-content').fracs(callback);
+  $(".page").fracs(callback);
+  //console.log($(".page"))
+  //$(".content-block").fracs(callback);
+  //$('.page-content').fracs(callback);
   //console.log(fracs);
 });
 

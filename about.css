@@ -5,6 +5,10 @@
 	}
 }
 
+#page2 {
+	z-index: 1;
+}
+
 .content-block p {
   font-size: 18px;
   font-family: "century gothic";
