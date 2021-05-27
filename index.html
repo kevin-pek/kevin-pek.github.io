@@ -7,22 +7,24 @@
 -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="timeline.js"></script>
 		<script type="text/javascript" src="parallax.js"></script>
 		<script type="text/javascript" src="jquery.fracs-1.0.2.js"></script>
 		<link rel="stylesheet" href='style.css' />
 		<link rel="stylesheet" href='landing.css' />
 		<link rel="stylesheet" href='about.css' />
+		<link rel="stylesheet" href='timeline.css' />
 	</head>
 	<body>
 		<header>
 			<!-- TOP NAVBAR -->
 			<div id="navbar">
-				<div id="name" class='navigation-button' data-pageId='1'>Kevin Pek</div>
+				<div id="name" class='navigation-button' onclick="NavigateTo(1)">Kevin Pek</div>
 				<!-- BUTTON TO TOGGLE DROPDOWN -->
 				<div id="navigation-section">
-				  <button class='navigation-button' data-pageId='2'>About</button>
-				  <button class='navigation-button' data-pageId='3'>Experience</button>
-				  <button class='navigation-button' data-pageId='4'>Contact</button>
+				  <button class='navigation-button' onclick="NavigateTo(2)">About</button>
+				  <button class='navigation-button' onclick="NavigateTo(3)">Experience</button>
+				  <button class='navigation-button' onclick="NavigateTo(4)">Contact</button>
 				</div>
 			</div>
 		</header>
@@ -36,7 +38,7 @@
 					<div id="title-text">
 						<h1>Kevin Pek</h1>
 						<p>Scroll down for more..</p>
-						<button class='navigation-button next-page' data-pageId='2'>
+						<button class='navigation-button next-page' onclick="NavigateTo(2)">
 							<img src="media/downarrowwhite.png"></img>
 						</button>
 					</div>
@@ -58,8 +60,17 @@
 				</div>
 			</div>
 			<div id="page3" class="page">
-				<div id="timeline">
-					
+				<div id="timeline" class="content-block">
+					<h1>Timeline</h1>
+					<svg id="timeline">
+						<line id="mainline"></line>
+					</svg>
+				</div>
+			</div>
+
+			<div id="page4" class="page">
+				<div class="content-block">
+					<p>Contact</p>
 				</div>
 			</div>
 			<!-- SECOND PARALLAX BG FOR REST OF SITE -->

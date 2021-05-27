@@ -1,5 +1,6 @@
 let selectedPage = 1;
 
+console.log(selectedPage);
 document.addEventListener('DOMContentLoaded', function() {
   /*window.addEventListener('scroll', () => {
     document.body.style.setProperty('--scroll',window.pageYOffset / (document.querySelector("#page1").offsetHeight - window.innerHeight));
@@ -11,24 +12,24 @@ document.addEventListener('DOMContentLoaded', function() {
     $("#page1").removeClass("fadein");
     landingPage.style.opacity = 1;
   });*/
-
-	document.querySelectorAll('.navigation-button', function (button) {
-    button.addEventListener('click', NavigateTo(button.dataset.pageId));
-  });
-  NavigateTo(selectedPage);
+	/*document.querySelectorAll('.navigation-button').forEach((button) => {
+    button.addEventListener('click', NavigateTo(button.dataset.pageid));
+  });*/
+	ChangeActivePage(1);
+  NavigateTo(1);
   //document.addEventListener('scroll', FadeCheck());
 })
 
 function NavigateTo(pageId) {
 	let page = document.querySelector("#page"+pageId);
-  //console.log(page.offsetTop);
+  //console.log(page);
   window.scrollTo({
     top: page.offsetTop,
     behavior: 'smooth'
   });
 }
 
-function changeActivePage(pageId) {
+function ChangeActivePage(pageId) {
   let prevPage = document.querySelector("#page"+selectedPage);
   $("#page"+selectedPage).addClass("fadeout");
   prevPage.addEventListener('animationend', () => {
@@ -52,7 +53,7 @@ function changeActivePage(pageId) {
 function callback (fracs, prev_fracs) {
   //console.log(this);
   if (fracs.visible > 0.5 && this.style.opacity == 0) {
-    changeActivePage($(this).prop('id').slice(-1));
+    ChangeActivePage($(this).prop('id').slice(-1));
   }/*
   else if (fracs.visible < 0.5 && this.style.opacity == 1) {
     $(this).addClass("fadeout");

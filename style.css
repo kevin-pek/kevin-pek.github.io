@@ -46,6 +46,8 @@ header {
 	width: 100%;
 	height: 100vh;
   opacity: 0;
+	margin: 0;
+  display: flex;
 }
 
 .page-bg {
@@ -63,6 +65,11 @@ header {
 	margin: 2em;
 	text-align: justify;
 	z-index: 3;
+}
+
+.content-block p {
+  font-size: 18px;
+  font-family: "century gothic";
 }
 
 .next-page {
