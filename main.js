@@ -1,6 +1,5 @@
-let selectedPage = 1;
+//let selectedPage = 1;
 
-console.log(selectedPage);
 document.addEventListener('DOMContentLoaded', function() {
   /*window.addEventListener('scroll', () => {
     document.body.style.setProperty('--scroll',window.pageYOffset / (document.querySelector("#page1").offsetHeight - window.innerHeight));
@@ -15,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	/*document.querySelectorAll('.navigation-button').forEach((button) => {
     button.addEventListener('click', NavigateTo(button.dataset.pageid));
   });*/
-	ChangeActivePage(1);
+	document.getElementById("site-bg").style.top = "100vh";
+	//ChangeActivePage(1);
   NavigateTo(1);
   //document.addEventListener('scroll', FadeCheck());
 })
@@ -53,20 +53,27 @@ function ChangeActivePage(pageId) {
 function callback (fracs, prev_fracs) {
   //console.log(this);
   if (fracs.visible > 0.5 && this.style.opacity == 0) {
-    ChangeActivePage($(this).prop('id').slice(-1));
-  }/*
-  else if (fracs.visible < 0.5 && this.style.opacity == 1) {
+    //ChangeActivePage($(this).prop('id').slice(-1));
+    $(this).addClass("fadein");
+    this.addEventListener('animationend', () => {
+      $(this).removeClass("fadein");
+      this.style.opacity = 1;
+    });
+  }
+  else if (fracs.visible < 0.25 && this.style.opacity == 1) {
     $(this).addClass("fadeout");
     this.addEventListener('animationend', () => {
       $(this).removeClass("fadeout");
       this.style.opacity = 0;
     });
-  }*/
+  }
 }
 
 // checks how much of each queried div is visible
 $(window).scroll(function () {
-  $(".page").fracs(callback);
+  $(".fadeable").fracs(callback);
+  //$("#page1").fracs(callback);
+  //$(".wrap").fracs(callback);
   //console.log($(".page"))
   //$(".content-block").fracs(callback);
   //$('.page-content').fracs(callback);

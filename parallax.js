@@ -12,8 +12,9 @@ function scrollLoop() {
   yScrollPosition = window.pageYOffset;
 
   // We only change the Y variable
-  setTranslate(0, yScrollPosition * -0.15, document.querySelector(".page-bg"));
+  setTranslate(0, yScrollPosition * -0.15, document.querySelector("#landing-bg"));
   setTranslate(0, yScrollPosition * -0.05, document.querySelector("#title-text"));
+  setTranslate(0, yScrollPosition * -0.15, document.querySelector("#site-bg"));
   // We use requestAnimationFrame to target the GPU instead of the CPU
   requestAnimationFrame(scrollLoop);
 }

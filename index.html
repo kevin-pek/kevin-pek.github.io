@@ -4,7 +4,8 @@
 		<title>Kevin Pek Portfolio</title>
 <!--
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
--->
+--><!-- Add icon library -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 		<script type="text/javascript" src="timeline.js"></script>
@@ -17,64 +18,85 @@
 	</head>
 	<body>
 		<header>
+			<div id="name" class='navigation-button' onclick="NavigateTo(1)">Kevin Pek</div>
 			<!-- TOP NAVBAR -->
-			<div id="navbar">
-				<div id="name" class='navigation-button' onclick="NavigateTo(1)">Kevin Pek</div>
-				<!-- BUTTON TO TOGGLE DROPDOWN -->
-				<div id="navigation-section">
-				  <button class='navigation-button' onclick="NavigateTo(2)">About</button>
-				  <button class='navigation-button' onclick="NavigateTo(3)">Experience</button>
-				  <button class='navigation-button' onclick="NavigateTo(4)">Contact</button>
-				</div>
+			<div id="navbar"><!-- BUTTON TO TOGGLE DROPDOWN -->
+			  <button class='navigation-button' onclick="NavigateTo(2)"><span class='dot'></button>
+			  <button class='navigation-button' onclick="NavigateTo(3)"><span class='dot'></button>
+			  <button class='navigation-button' onclick="NavigateTo(4)"><span class='dot'></button>
+			</div>
+			<div id="handles">
+				<a href="https://github.com/kevin-pek" class="handle-button fa fa-github"></a>
+				<a href="https://www.linkedin.com/in/kevin-pek-0211751bb/" class="handle-button fa fa-linkedin"></a>
 			</div>
 		</header>
 
 		<main>
 			<!-- EACH DIV CONTAINS A DIFFERENT PAGE CONTENT -->
 			<!-- CLICK ON NAVBAR div WILL BRING USER TO SPECIFIC PAGE -->
-			<div id="page1" class="page">
+			<div id="page1" class="page fadeable">
 				<!--<div id="white-filler"></div>-->
 				<div class="page-content">
 					<div id="title-text">
 						<h1>Kevin Pek</h1>
-						<p>Scroll down for more..</p>
+						<p></p>
+						<!--
 						<button class='navigation-button next-page' onclick="NavigateTo(2)">
 							<img src="media/downarrowwhite.png"></img>
 						</button>
+						-->
 					</div>
 				</div>
 				<!-- PARALLAX BG with multiple layers -->
-				<div class="page-bg" id="landing-bg">
-					<div id="bg-filter"></div>
-					<div id="bg-box"></div>
-				</div>
+				<div class="page-bg" id="landing-bg"></div>
 			</div>
-			<div id="page2" class="page">
-				<div class="content-block">
-					<h1>About Me</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="content-block">
-					<h1>About Me</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-			</div>
-			<div id="page3" class="page">
-				<div id="timeline" class="content-block">
-					<h1>Timeline</h1>
-					<svg id="timeline">
-						<line id="mainline"></line>
-					</svg>
-				</div>
-			</div>
+			<div id="site-content">
+				<section id="page2" class="page">
+					<div class="wrap fadeable">
+						<div class="content-block block-left">
+							<h1>Who Am I</h1>
+						</div>
+					</div>
+					<div class="wrap fadeable">
+						<div class="content-block block-right">
+							<h1>About Me</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</div>
+					</div>
+				</section>
+				<section id="page3" class="page">
+					
+					<div class="wrap sticky fadeable">
+						<div class="content-block block-left" id="align-left">
+							<h1>Skills</h1>
+						</div>
+					</div>
+					
+					<div class="wrap long-list">
+						<div class="content-block block-right">
+							<h2>Programming</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<br>
+							<h2>Web Design</h2>
+							<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<br>
+							<h2>Unity Engine</h2>
+							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+							<br>
+							<h2>3D Computer Graphics</h2>
+							<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</div>
+					</div>
+				</section>
 
-			<div id="page4" class="page">
-				<div class="content-block">
-					<p>Contact</p>
-				</div>
+				<section id="page4" class="page">
+					<div class="content-block">
+						<p>Contact</p>
+					</div>
+				</section>
+				<!-- SECOND PARALLAX BG FOR REST OF SITE -->
+				<div id="site-bg" class="page-bg"></div>
 			</div>
-			<!-- SECOND PARALLAX BG FOR REST OF SITE -->
-			<div id="site-bg"></div>
 		</main>
 	</body>
 </html>

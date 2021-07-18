@@ -1,12 +1,24 @@
 #page3 {
-  padding-top: 2em;
+  padding-top: 16em;
 }
 
-#page3 .content-block {
-
+.sticky {
+  position: sticky;
+  top: 40vh;
 }
 
-#mainline {
-  stroke: rgb(255, 255, 255);
-  stroke-width: 5px;
+.long-list {
+  padding-top: 40vh;
+  padding-bottom: 60vh;
+}
+
+@media (min-width: 576px) {
+	#align-left {
+    margin-left: 0;
+  }
+}
+@media (min-width: 992px) {
+	#align-left {
+    margin-left: 10em;
+  }
 }
