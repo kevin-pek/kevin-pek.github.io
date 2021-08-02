@@ -23,7 +23,8 @@ header {
 	display: flex;
 	flex-direction: column;
   	align-items: center;
-	border-right: 2px solid;
+	border-width: 0 2px 0 0;
+	border-style: solid;
   	border-image: radial-gradient(#f10c77, rgba(0, 0, 0, 0)) 1;
 	height: 25vh;
   	justify-content: center;
@@ -36,7 +37,8 @@ header {
   	display: flex;
   	flex-direction: row;
 	align-items: center;
-  	border-bottom: 2px solid;
+	border-width: 0 0 2px 0;
+	border-style: solid;
 	border-image: radial-gradient(#f10c77, rgba(0, 0, 0, 0)) 1;
 	justify-content: center;
 }
@@ -161,7 +163,6 @@ p {
 
 .block-right {
 	float: right;
-
 }
 
 .next-page {
