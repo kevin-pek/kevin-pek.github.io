@@ -12,6 +12,7 @@
 		<script type="text/javascript" src="parallax.js"></script>
 		<script type="text/javascript" src="jquery.fracs-1.0.2.js"></script>
 		<link rel="stylesheet" href='style.css' />
+		<link rel="stylesheet" href='bgelements.css' />
 		<link rel="stylesheet" href='landing.css' />
 		<link rel="stylesheet" href='about.css' />
 		<link rel="stylesheet" href='skills.css' />
@@ -20,12 +21,13 @@
 	<body>
 		<header>
 			<div id="name" class='navigation-button' onclick="NavigateTo(1)">Kevin Pek</div>
-			<!-- TOP NAVBAR -->
+			<!-- SIDE NAVBAR -->
 			<div id="navbar"><!-- BUTTON TO TOGGLE DROPDOWN -->
 			  <button class='navigation-button' onclick="NavigateTo(2)"><span class='dot'></button>
 			  <button class='navigation-button' onclick="NavigateTo(3)"><span class='dot'></button>
 			  <button class='navigation-button' onclick="NavigateTo(4)"><span class='dot'></button>
 			</div>
+			<!--TOP RIGHT SOCIAL MEDIA LINKS-->
 			<div id="handles">
 				<a href="https://github.com/kevin-pek" class="handle-button fa fa-github"></a>
 				<a href="https://www.linkedin.com/in/kevin-pek-0211751bb/" class="handle-button fa fa-linkedin"></a>
@@ -36,7 +38,6 @@
 			<!-- EACH DIV CONTAINS A DIFFERENT PAGE CONTENT -->
 			<!-- CLICK ON NAVBAR div WILL BRING USER TO SPECIFIC PAGE -->
 			<div id="page1" class="page fadeable">
-				<!--<div id="white-filler"></div>-->
 				<div class="page-content">
 					<div id="title-text">
 						<h1>Kevin Pek</h1>
@@ -63,9 +64,9 @@
 							<!--image of self-->
 						</div>
 						<div class="content-block block-right">
-							<h1>About Me</h1>
-							<p>Undergraduate student at the National University of Singapore, studying Data Science and Analytics.</p>
-							<br />
+							<h1>Who I Am:</h1>
+							<p>Student at the National University of Singapore, pursuing studies in Data Science and Analytics.</p>
+							<br>
 							<p>I enjoy cycling and many sports and games, and also consider myself an art hobbyist who enjoys experimenting with various forms of digital art.</p>
 						</div>
 					</div>
@@ -81,16 +82,16 @@
 					<div class="wrap long-list">
 						<div class="content-block block-right">
 							<h2>Programming</h2>
-							<p>I have experience programming in Python, as well as coding in the Unity Game Engine using C# and HLSL.</p>
+							<ul>Python, with some experience with libraries such as Tensorflow and Keras.</ul>
+							<ul>C# and HLSL, from working with the Unity Game Engine.</ul>
 							<br>
 							<h2>Web Development</h2>
-							<p>I have experience in web design using HTML, CSS, Bootstrap, and web programming using jQuery, Javascript. I also have experience using the Django web framework.</p>
+							<ul>HTML5, CSS, Bootstrap, jQuery, Javascript.</ul>
+							<ul>I also have some experience using the Django web framework, as well as some js libraries such as ml5js and p5js.</ul>
 							<br>
-							<h2>Microsoft Excel</h2>
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+							<h2>Graphic Design</h2>
+							<ul>Photo editing and graphic design using programs such as Adobe Photoshop and GIMP.</ul>
 							<br>
-							<h2></h2>
-							<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						</div>
 					</div>
 				</section>
@@ -99,26 +100,26 @@
 					<div class="wrap long-list">
 						<!--Can try to parallsx the images here a little, on mobile it is image top text bottom-->
 						<h1>Projects</h1>
-						<p>From passion projects to internship projects, these are a few examples of the work I have done through the years.</p>
+						<p>These are some of the projects I have done in my free time through the years.</p>
 						<br>
 						<br>
 						<div class="content-block block-left">
-							<h3>AI Controlled Drone</h3>
-							<p></p>
+							<h3>N Body Simulation in Unity</h3>
+							<p>After getting acquainted with the Unity Engine during my internship in DSTA, I went on to experiment with Unity's compute shaders to speed up calculations.</p>
 							<br>
 						</div>
 						<div class="content-block block-right">
-							
+							<img src="media/nbodysim.gif" width="420px" style="border: 0.25px solid white;"/>
 						</div>
 
 						<div class="wrap">
 							<div class="content-block block-right">
-								<h3>End 2016 - Early 2017</h3>
-								<p>I consider this to be the most complex game I have made using LÖVE 2D.</p>
+								<h3>2D Spaceship Combat Game - <i>End 2016 - Early 2017</i></h3>
+								<p>I consider this to be the most complex game I have made using LÖVE 2D. This is a spaceship combat game which includes different types of ships and weapons, and has complex mechanics such as weapon penetration, fires, and ship armour and shields.</p>
 								<br>
 							</div>
 							<div class="content-block block-left">
-								<img src="media/spaceship_game.gif" width="420px" style="border: 0.25px solid white;"/>
+								<img src="media/spaceship_game.gif" class="proj-gif" width="420px" style="border: 0.25px solid white;"/>
 							</div>
 						</div>
 
@@ -136,6 +137,9 @@
 					</div>
 				</section>
 				<!-- SECOND PARALLAX BG FOR REST OF SITE -->
+				<img src="media/gradientcircle.png" data-parallax="-0.4" id="c1" class="bg-circle" width="80vw" height="80vw">
+				<img src="media/gradientcircle.png" data-parallax="-0.2" id="c2" class="bg-circle" width="50vw" height="50vw">
+				<img src="media/gradientcircle.png" data-parallax="-0.5" id="c3" class="bg-circle" width="120vw" height="120vw">
 				<div id="site-bg" class="page-bg"></div>
 			</div>
 		</main>

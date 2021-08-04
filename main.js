@@ -15,9 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
     button.addEventListener('click', NavigateTo(button.dataset.pageid));
   });*/
 	document.getElementById("site-bg").style.top = "100vh";
-	//ChangeActivePage(1);
   NavigateTo(1);
-  //document.addEventListener('scroll', FadeCheck());
+  $('#page1').addClass("fadein");
+    document.querySelector('#page1').addEventListener('animationend', () => {
+      $('#page1').removeClass("fadein");
+      document.querySelector('#page1').style.opacity = 1;
+    });
 })
 
 function NavigateTo(pageId) {

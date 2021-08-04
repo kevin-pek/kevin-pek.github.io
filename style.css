@@ -191,20 +191,24 @@ p {
 @keyframes fadedown {
   0% {
   	opacity: 100%;
+	z-index: inherit;
   	/*transform: translateY(0);*/
   }
   100% {
   	opacity: 0%;
+	z-index: inherit;
   	/*transform: translateY(20px);*/
   }
 }
 @keyframes fadein {
   0% {
   	opacity: 0%;
+	z-index: inherit;
   	/*transform: translateY(0);*/
   }
   100% {
   	opacity: 100%;
+	z-index: inherit;
   	/*transform: translateY(20px);*/
   }
 }

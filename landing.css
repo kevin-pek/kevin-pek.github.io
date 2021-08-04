@@ -11,7 +11,7 @@
   left: 30%;
   width: 40%;
   position: fixed;
-  z-index: 2;
+  z-index: -4;
 }
 
 #title-text {
@@ -36,6 +36,7 @@
   background-position: center;
   filter: blur(1px);
   -webkit-filter: blur(1px);
+  z-index: -5;
 }
 /*
 #bg-filter {

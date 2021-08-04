@@ -1,0 +1,26 @@
+#site-bg {
+    background-color: black;
+    z-index: -3;
+}
+
+.bg-circle {/*
+    filter: blur(1px);
+    -webkit-filter: blur(1px);*/
+    position: fixed;
+    z-index: -2;
+}
+
+#c1 {
+    right: 10vw;
+    top: 270vh;
+}
+
+#c2 {
+    left: 7vw;
+    top: 120vh;
+}
+
+#c3 {
+    left:25vw;
+    top:370vh;
+}
