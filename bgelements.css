@@ -1,26 +1,50 @@
 #site-bg {
     background-color: #050505;
     z-index: -3;
+    height: 300vh;
 }
 
 .bg-circle {/*
     filter: blur(1px);
     -webkit-filter: blur(1px);*/
     position: fixed;
-    z-index: -2;
 }
 
 #c1 {
     right: 10vw;
-    top: 270vh;
+    top: 230vh;
+    z-index: -1;
 }
 
 #c2 {
     left: 7vw;
     top: 120vh;
+    z-index: -3;
 }
 
 #c3 {
     left:25vw;
-    top:370vh;
+    top:320vh;
+    z-index: -1;
+}
+
+#lines-bg {
+    background-image: url("media/lines2.png");
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    top: 180vh;
+    position: absolute;
+}
+
+#lines-bg2 {
+    position: fixed;
+    width: 100%;
+    top: 160vh;
+    z-index: -2;
+}
+#lines2 {
+    display: block;
+    width: 50vw;
+    float: right;
 }

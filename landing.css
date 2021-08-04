@@ -34,8 +34,8 @@
 #landing-bg {
 	background-image: url('media/landing.png');
   background-position: center;
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
+  /*filter: blur(1px);
+  -webkit-filter: blur(1px);*/
   z-index: -5;
 }
 /*
