@@ -11,6 +11,23 @@ function scrollLoop() {
   xScrollPosition = window.pageXOffset;
   yScrollPosition = window.pageYOffset;
 
+  // landing page animation manager
+  let landingPage = document.querySelector("#page1");
+  if (yScrollPosition < window.innerHeight/2 && landingPage.style.opacity == 0) {
+    landingPage.classList.add("fadein");
+    landingPage.addEventListener('animationend', () => {
+      landingPage.classList.remove("fadein");
+      landingPage.style.opacity = 1;
+    });
+  }
+  else if (yScrollPosition > window.innerHeight/2 && landingPage.style.opacity == 1) {
+    landingPage.classList.add("fadeout");
+    landingPage.addEventListener('animationend', () => {
+      landingPage.classList.remove("fadeout");
+      landingPage.style.opacity = 0;
+    });
+  }
+
   // We only change the Y variable
   setTranslate(0, yScrollPosition * -0.15, document.querySelector("#landing-bg"));
   setTranslate(0, yScrollPosition * -0.05, document.querySelector("#title-text"));
