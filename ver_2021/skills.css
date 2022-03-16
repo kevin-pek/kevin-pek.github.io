@@ -1,0 +1,25 @@
+#page3 {
+  margin-top: 20vh;
+  padding-top: 16em;
+}
+
+.sticky {
+  position: sticky;
+  top: 40vh;
+}
+
+.long-list {
+  padding-top: 40vh;
+  padding-bottom: 60vh;
+}
+
+@media (min-width: 576px) {
+	#align-left {
+    margin-left: 0;
+  }
+}
+@media (min-width: 992px) {
+	#align-left {
+    margin-left: 10em;
+  }
+}

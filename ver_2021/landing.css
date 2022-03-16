@@ -1,0 +1,59 @@
+#page1 {
+  height: 150vh;
+  text-align: center;
+  /*animation: scrollfade 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);*/
+}
+
+.page-content {
+  top:45%;
+  left: 30%;
+  width: 40%;
+  position: fixed;
+  z-index: -4;
+}
+
+#title-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#title-text h1 {
+  font-size: 5rem;
+  margin: 0;
+}
+
+#title-text p {
+  margin-top: 0;
+  font-size: 1rem;
+  font-family: "century gothic";
+}
+
+#landing-bg {
+	background-image: url('media/landing.png');
+  background-position: center;
+  /*filter: blur(1px);
+  -webkit-filter: blur(1px);*/
+  z-index: -5;
+}
+/*
+#bg-filter {
+  background-color: #000;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+}*/
+
+@keyframes scrollfade {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

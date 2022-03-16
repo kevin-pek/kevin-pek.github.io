@@ -1,0 +1,240 @@
+body {
+	background-color: #050505;
+	color: white;
+	margin: 0;
+	font-size: 18px;
+}
+
+header {
+	position: fixed;
+	height: 100%;
+	z-index: 10;
+}
+
+#name {
+	margin: 1.5em;
+	position: fixed;
+	font-size: 1.5em;
+}
+
+#navbar {
+  	-ms-transform: translateY(150%);
+  	transform: translateY(150%);
+	display: flex;
+	flex-direction: column;
+  	align-items: center;
+	border-width: 0 2px 0 0;
+	border-style: solid;
+  	border-image: radial-gradient(#f10c77, rgba(0, 0, 0, 0)) 1;
+	height: 25vh;
+  	justify-content: center;
+}
+
+#handles {
+	position: fixed;
+	top: 2.5vh;
+	right: 2.5vh;
+  	display: flex;
+  	flex-direction: row;
+	align-items: center;
+	border-width: 0 0 2px 0;
+	border-style: solid;
+	border-image: radial-gradient(#f10c77, rgba(0, 0, 0, 0)) 1;
+	justify-content: center;
+}
+/*
+#name {
+	margin: auto;
+}
+
+#navigation-section {
+	margin:auto;
+	display: flex;
+	flex-direction: column;
+}*/
+
+.navigation-button {
+	margin: .35em;
+	border: none;
+	-webkit-appearance: none;
+	color: white;
+	font-size: 20px;
+	font-family: serif;
+	background-color: rgba(0,0,0,0);
+}
+.navigation-button:hover {
+	opacity: 0.75;
+	cursor: pointer;
+}
+.handle-button {
+	color: white;
+	margin: .35em;
+	transform: scale(1.2);
+}
+.handle-button:hover {
+	opacity: 0.75;
+	cursor: pointer;
+}
+
+.dot {
+	height: .65em;
+	width: .65em;
+	background-color: #fff;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+#site-content {
+	display: block;
+	margin: auto;
+}
+@media (min-width: 576px) {
+	#site-content {
+		max-width: 540px;
+	}
+}
+@media (min-width: 768px) {
+	#site-content {
+		max-width: 720px;
+	}
+}
+@media (min-width: 992px) {
+	#site-content {
+		max-width: 960px;
+	}
+}
+@media (min-width: 1200px) {
+	#site-content {
+		max-width: 1140px;
+	}
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+h2 {
+	font-size: 2rem;
+	margin: 0;
+	margin-top: 2rem;
+	margin-bottom: .5rem;
+}
+p {
+	margin: 0;
+	font-size: 1.2rem;
+	font-family: "century gothic";
+}
+
+.page {
+	display: block;
+	border: none !important;
+	width: 100%;
+	margin: 0;
+	float: left;
+}
+
+.page-bg {
+	z-index: -1;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.wrap {
+	display: block;
+	width: 100%;
+	float: left;
+}
+
+.content-block {
+	margin: 2em;
+	text-align: justify;
+	z-index: 3;
+	display: inline-block;
+	max-width: 560px;
+}
+
+.block-left {
+	float: left;
+}
+
+.block-right {
+	float: right;
+}
+
+.next-page {
+	margin: 0;
+}
+
+.next-page img {
+	width: 15px;
+	height: 10px;
+}
+
+/* fade animations mainly for content block class */
+.fadeout {
+	-webkit-animation: fadedown 0.4s linear;
+	animation: fadedown 0.4s linear;
+}
+.fadein {
+	-webkit-animation: fadein 0.4s linear;
+	animation: fadein 0.4s linear;
+}
+
+.fadeable {
+	opacity: 0;
+}
+
+@keyframes fadedown {
+  0% {
+  	opacity: 100%;
+	z-index: inherit;
+  	/*transform: translateY(0);*/
+  }
+  100% {
+  	opacity: 0%;
+	z-index: inherit;
+  	/*transform: translateY(20px);*/
+  }
+}
+@keyframes fadein {
+  0% {
+  	opacity: 0%;
+	z-index: inherit;
+  	/*transform: translateY(0);*/
+  }
+  100% {
+  	opacity: 100%;
+	z-index: inherit;
+  	/*transform: translateY(20px);*/
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #eee;
+}
+
+::selection {
+	background: rgba(0, 0, 0, 0);
+}
+p::selection {
+	background: #f10c77;
+}
+::-moz-selection {
+	background: rgba(0, 0, 0, 0);
+}
+p::-moz-selection {
+	background: #f10c77;
+}
